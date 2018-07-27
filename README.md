@@ -10,21 +10,11 @@
 
 ## Description
 
-pip install -b python3 -t src/lib/IP2Location IP2Location
-
-IP2Location is used to get location by IP.
-
-Datastore is [ip2location](https://lite.ip2location.com/database/ip-country-region-city) binary DB file.
-
-Service is running in AWS Lambda and receiving requests via AWS API Gateway.
-
-AWS API Gateway allows HTTPS only requests.
-
-IP2Location service can provide JSON and CSV responses.
+IP2Location is used to get location by IP. Datastore is [ip2location](https://lite.ip2location.com/database/ip-country-region-city) binary DB file. Service is running in **AWS Lambda** and receiving requests via **AWS API Gateway**. **ip2loc** service can provide JSON and CSV responses.
 
 Service accepts only GET request with query strings.
 
-[IP2Location Python lib](https://github.com/ip2location/IP2Location-Python) was used
+**[IP2Location Python lib](https://github.com/ip2location/IP2Location-Python) was used**
 
 ## Request and response details
 
@@ -66,13 +56,20 @@ IP2Location is configured via environment variables.
 * `DB_FILE` - ip2location binary file path related to main func file
 * `CSV_DELIMITER` - Delimiter used for CSV format
 
-For service to operate [ip2location](https://lite.ip2location.com/database/ip-country-region-city) DB file must be present in `src/db`.
+**For service to operate [ip2location](https://lite.ip2location.com/database/ip-country-region-city) DB file must be present in `src/db`**
 
 ## Deployment
 
-_Python version 3.6+ tested only_
-
 1. Create AWS Lambda with IAM User that have CloudWatch write permissions.
+
+    Code should be zipped from `src` folder.
+    ```shell
+    cd src
+    zip -r ip2loc.zip .
+    ```
+
+    AWS Lambda handler `main.lambda_handler`
+
 2. Set AWS Lambda environment variables ([Service configuration](#Service-configuration))
 
     Recommended AWS Lambda resource limits:
@@ -116,6 +113,10 @@ TH;Thailand;Surat Thani;Ko Samui
 ```
 
 ## Local testing
+
+_Python version 3.6+ tested only_
+
+**For service to operate [ip2location](https://lite.ip2location.com/database/ip-country-region-city) DB file must be present in `src/db`**
 
 ```shell
 # source env_local

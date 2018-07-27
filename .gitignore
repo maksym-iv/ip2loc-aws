@@ -3,7 +3,9 @@
 .DS_Store
 .vscode
 __pycache__
+
 *.log
+*.zip
 
 src/db/*
 !src/db/.gitkeep
