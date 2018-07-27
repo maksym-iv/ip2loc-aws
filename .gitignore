@@ -1,0 +1,9 @@
+*.pyc
+.venv
+.DS_Store
+.vscode
+__pycache__
+*.log
+
+src/db/*
+!src/db/.gitkeep
