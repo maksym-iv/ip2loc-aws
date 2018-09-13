@@ -100,13 +100,13 @@ Sample JSON response:
 }
 ```
 
-Sample JSON request:
+Sample CSV request:
 
 ```uri
 https://example.com/somepath/?ip=113.53.111.32&format=csv
 ```
 
-Sample JSON response:
+Sample CSV response:
 
 ```csv
 TH;Thailand;Surat Thani;Ko Samui
